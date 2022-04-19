@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="mysqlTables" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!-- 连接数据库 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/note?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;serverTimezone=GMT"
+        userId="root"
+        password="1234">
+        </jdbcConnection>
+
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+                        <!--connectionURL="jdbc:mysql://47.100.243.106:3306/hs_cloud?useUnicode=true&amp;characterEncoding=UTF-8"-->
+                        <!--userId="hapadmin"-->
+                        <!--password="hapadmin123">-->
+        <!--</jdbcConnection>-->
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!--这里是实体生成，也就是java中的类，需要事先在目标src下新建com.oa.entity包。 -->
+        <javaModelGenerator targetPackage="com.example.generator.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--这里是sqlmapper配置文件的生成，需要事先在目标src下新建com.oa.sqlmapper包。 -->
+        <sqlMapGenerator targetPackage="com.example.generator.mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+
+        <!--这里生成的是与sqlmapper配置文件相对应的sqlmapper接口，sqlmapper是直接与数据库交互的。需要事先在目标src下新建com.oa.sqlmapper包。 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.generator.mapper"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--table标签对应数据库中的table表，这里是一个名称为professional的数据表，tableName与数据库中的表名对应 -->
+
+        <table tableName="element" domainObjectName="Element" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
