@@ -1,5 +1,6 @@
 package com.example.generator.Controller;
 
+import com.example.generator.anno.WriteOperLog;
 import com.example.generator.logic.SysUserlogic;
 import com.example.generator.model.SysUser;
 import com.example.generator.model.SysUserReq;
@@ -25,6 +26,7 @@ public class UserController {
     @Autowired
     private SysUserlogic userlogic;
 
+    @WriteOperLog(description = "查询用户列表")
     @PostMapping("/query")
     public R queryList(@RequestBody SysUser user) {
 

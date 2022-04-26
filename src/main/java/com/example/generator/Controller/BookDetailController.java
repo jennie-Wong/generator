@@ -4,7 +4,7 @@ import com.example.generator.logic.BookDetailLogic;
 import com.example.generator.model.BookDetail;
 import com.example.generator.utils.R;
 import com.example.generator.utils.UUIDUtils;
-import lombok.extern.log4j.Log4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +26,7 @@ import java.util.Date;
  */
 @RestController
 @RequestMapping("/BookDetail")
-@Log4j
+//@Log4j
 public class BookDetailController {
 
 
@@ -142,10 +142,10 @@ public class BookDetailController {
 
             bookDetailLogic.savebatch(bookDetail);
         } catch (Exception e) {
-            log.error("上传文件失败:", e);
+            //log.error("上传文件失败:", e);
         }
         long e1 = System.currentTimeMillis();
-        log.info("上传成功");
+        //log.info("上传成功");
         return new R().put("URL",filePath);
     }
 
@@ -173,10 +173,10 @@ public class BookDetailController {
             // 返回上传文件的访问路径
             filePath = getPath +"sucai/"+new SimpleDateFormat("yyyy/MM/dd").format(date)+"/"+ newName;
         } catch (Exception e) {
-            log.error("上传文件失败:", e);
+            //log.error("上传文件失败:", e);
         }
         long e1 = System.currentTimeMillis();
-        log.info("上传成功");
+        //log.info("上传成功");
         return new R().put("URL",filePath);
     }
 }

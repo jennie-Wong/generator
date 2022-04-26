@@ -78,7 +78,6 @@ public class SysUserlogic {
 
     public List<SysUser> queryList(SysUser user) {
         List<SysUser>  list=userMapper.queryList(user);
-        list.stream().forEach(e->e.setSign(e.getSign().replaceAll("！","")));
         return list;
     }
 

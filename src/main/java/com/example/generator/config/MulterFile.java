@@ -6,6 +6,10 @@ import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 上传文件大小配置
+ * @author wangjing
+ */
 @Configuration
 public class MulterFile {
     /**
@@ -16,9 +20,9 @@ public class MulterFile {
     public MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
         //文件最大
-        factory.setMaxFileSize("30960KB"); //KB,MB
+        //factory.setMaxFileSize("30960KB");
         /// 设置总上传数据总大小
-        factory.setMaxRequestSize("3096000KB");
+        //factory.setMaxRequestSize("3096000KB");
         return factory.createMultipartConfig();
     }
 }

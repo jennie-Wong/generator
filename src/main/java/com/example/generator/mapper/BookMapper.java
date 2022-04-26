@@ -2,14 +2,13 @@ package com.example.generator.mapper;
 
 import com.example.generator.model.Book;
 import com.example.generator.model.SysUser;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
-@Mapper
 @Repository
-public interface BookMapper {
+public interface BookMapper   extends Mapper<Book> {
 
     int deleteByPrimaryKey(Integer id);
 

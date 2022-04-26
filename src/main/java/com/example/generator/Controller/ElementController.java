@@ -7,6 +7,7 @@ import com.example.generator.model.Element;
 import com.example.generator.utils.R;
 import com.example.generator.utils.UUIDUtils;
 import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,7 @@ import java.util.Date;
  */
 @RestController
 @RequestMapping("/Element")
-@Log4j
+@Slf4j
 public class ElementController {
 
 
@@ -92,10 +93,10 @@ public class ElementController {
 
             elementLogic.insertOne(element);
         } catch (Exception e) {
-            log.error("上传文件失败:", e);
+           // log.error("上传文件失败:", e);
         }
         long e1 = System.currentTimeMillis();
-        log.info("上传成功");
+       // log.info("上传成功");
         return new R().put("URL",filePath);
     }
 }

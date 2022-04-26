@@ -47,7 +47,7 @@
 
         <!--table标签对应数据库中的table表，这里是一个名称为professional的数据表，tableName与数据库中的表名对应 -->
 
-        <table tableName="element" domainObjectName="Element" enableUpdateByExample="false"
+        <table tableName="operation_log" domainObjectName="OperationLog" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
