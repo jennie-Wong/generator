@@ -86,6 +86,8 @@ mybatis-plus:
       logic-delete-value: -1
       logic-not-delete-value: 0
     banner: false
+
+
   #原生配置
   configuration:
     map-underscore-to-camel-case: true

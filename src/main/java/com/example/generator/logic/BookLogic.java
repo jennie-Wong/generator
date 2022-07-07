@@ -1,5 +1,4 @@
 package com.example.generator.logic;
-
 import com.example.generator.mapper.BookMapper;
 import com.example.generator.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
